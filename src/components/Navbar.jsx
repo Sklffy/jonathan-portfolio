@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="navbar glassy-navbar">
       <div className="nav-left">
-        <img src="/Assets/imgs/logo.png" alt="Logo" className="logo-img" />
+        <img src="/logo.png" alt="Logo" className="logo-img" />
         <span className="logo-text">Jonathan Geisler</span>
       </div>
 

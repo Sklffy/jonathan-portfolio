@@ -48,7 +48,7 @@ export default function Hero() {
           <h1><span className="gradient-name">Jonathan Geisler</span></h1>
           <h2><span id="typewriter"></span></h2>
           <a
-            href="/Assets/JonathanGeislerCV.pdf"
+            href="/JonathanGeislerCV.pdf"
             className="resume-btn"
             target="_blank"
             rel="noreferrer"
@@ -79,7 +79,7 @@ export default function Hero() {
         <div className="profile-wrapper">
           <div className="border-spin" />
           <img
-            src="/Assets/imgs/Jonny.png"
+            src="/Jonny.png"
             alt="Jonathan Geisler"
             className="profile-pic"
           />

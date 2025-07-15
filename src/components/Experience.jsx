@@ -15,7 +15,7 @@ export default function Experience() {
         {/* CBTS */}
         <div className="timeline-entry left">
           <div className="content-box work-box">
-            <img src="/Assets/Work/CBTS.png" alt="CBTS Logo" className="work-logo" />
+            <img src="/CBTS.png" alt="CBTS Logo" className="work-logo" />
             <div>
               <p className="timeline-date">May 2025 – July 2025</p>
               <h3>IT Support Technician</h3>
@@ -33,7 +33,7 @@ export default function Experience() {
         {/* NCAE */}
         <div className="timeline-entry right">
           <div className="content-box work-box">
-            <img src="/Assets/Work/NCAE.png" alt="NCAE Cyber Games Logo" className="work-logo" />
+            <img src="/NCAE.png" alt="NCAE Cyber Games Logo" className="work-logo" />
             <div>
               <p className="timeline-date">Jan 2025 – May 2025</p>
               <h3>SSH/FTP Services Specialist</h3>

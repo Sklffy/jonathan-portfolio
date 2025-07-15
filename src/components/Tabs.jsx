@@ -37,7 +37,7 @@ export default function Tabs() {
           </div>
           <div className="about-image">
             <div className="glow-circle">
-              <img src="/Assets/imgs/logo.png" alt="Jonathan Geisler" />
+              <img src="/logo.png" alt="Jonathan Geisler" />
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function Tabs() {
   <div className="project-grid">
     {/* RedGuard AI */}
     <div className="project-card">
-      <img src="/Assets/Projects/RED.png" className="project-img" alt="RedGuard AI" />
+      <img src="/RED.png" className="project-img" alt="RedGuard AI" />
       <div className="project-info">
         <h3>RedGuard AI</h3>
         <p>An AI-driven honeypot threat intelligence system for simulating live attacks.</p>
@@ -66,7 +66,7 @@ export default function Tabs() {
 
     {/* ATLANTIS Scoreboard */}
     <div className="project-card">
-      <img src="/Assets/Projects/favicon.png" className="project-img" alt="ATLANTIS Scoreboard" />
+      <img src="/favicon.png" className="project-img" alt="ATLANTIS Scoreboard" />
       <div className="project-info">
         <h3>ATLANTIS Scoreboard</h3>
         <p>A C++ and HTML-based scoring engine with inject tracking and live service checks.</p>
@@ -81,7 +81,7 @@ export default function Tabs() {
 
     {/* Proxmox Cyber Lab */}
     <div className="project-card">
-      <img src="/Assets/Projects/proxmox.jpg" className="project-img" alt="Proxmox Cyber Lab" />
+      <img src="/proxmox.jpg" className="project-img" alt="Proxmox Cyber Lab" />
       <div className="project-info">
         <h3>Proxmox Cyber Lab</h3>
         <p>Home lab for cyber defense testing. GPU passthrough, pfSense, VLANs, and AI/ML support.</p>
