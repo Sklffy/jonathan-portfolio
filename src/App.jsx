@@ -5,7 +5,6 @@ import Experience from './components/Experience';
 import Tabs from './components/Tabs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-
 import ParticlesBackground from './components/ParticlesBackground';
 
 function App() {

@@ -72,16 +72,13 @@ header {
   color: #64ffda;
 }
 
-.icon {
+.nav-icon {
   width: 22px;
   height: 22px;
   filter: invert(90%);
   transition: transform 0.3s ease;
 }
 
-.icon:hover {
-  transform: scale(1.1);
-}
 
 @media (max-width: 768px) {
   .hero-content, .project-card {
@@ -322,29 +319,6 @@ header {
 }
 
 
-/* TYPEWRITER EFFECT */
-.typewriter {
-  font-size: 2rem;
-  font-family: 'Courier New', monospace;
-  color: #facc15;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-}
-
-#typewriter-text::after {
-  content: '|';
-  animation: blink 1s infinite;
-  color: #facc15;
-  margin-left: 5px;
-  font-weight: 600;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
 
 .section-divider {
   width: 100%;
@@ -468,6 +442,16 @@ body {
   box-shadow: 0 0 15px rgba(100, 255, 218, 0.7);
   border: 3px solid #0a192f;
 }
+
+.timeline-icon {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  filter: drop-shadow(0 0 4px #00ffff90);
+}
+
 
 /* Content Boxes - Glass Effect */
 .content-box,
@@ -1117,36 +1101,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-.scroll-top {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #64ffda;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(100, 255, 218, 0.4);
-  border-radius: 10px;
-  text-decoration: none;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 12px rgba(100, 255, 218, 0.15),
-              inset 0 0 4px rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-}
-
-.scroll-top:hover {
-  transform: translateY(-3px);
-  background: rgba(100, 255, 218, 0.1);
-  box-shadow: 0 0 15px rgba(100, 255, 218, 0.3),
-              0 4px 20px rgba(0, 0, 0, 0.4),
-              inset 0 0 6px rgba(255, 255, 255, 0.15);
-  color: white;
-}
-    .contact-card label { display:block; margin-top:1rem; }
-    .contact-card input, .contact-card textarea { width:100%; padding:.5rem; }
-    .contact-card button { margin-top:1rem; padding:.6rem 1.2rem; }
 
 
-  .main-content {
-  position: relative;
-  z-index: 1;
-}
+

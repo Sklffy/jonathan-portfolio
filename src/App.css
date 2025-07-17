@@ -1,9 +1,5 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+
+
 
 .logo {
   height: 6em;
@@ -44,3 +40,41 @@
 * {
       cursor: url('/icons8-cursor-48.png'), auto;
   }
+
+  .section-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center !important;
+}
+
+.subtext {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-x 6s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+

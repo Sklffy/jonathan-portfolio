@@ -85,6 +85,7 @@ export default function Hero() {
           />
         </div>
       </div>
+      <hr className="section-divider" />
     </section>
   );
 }
