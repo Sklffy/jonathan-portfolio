@@ -14,9 +14,9 @@ function App() {
       <div className="main-content">
         <Navbar />
         <Hero />
+        <Tabs />
         <Education />
         <Experience />
-        <Tabs />
         <Contact />
         <Footer />
       </div>

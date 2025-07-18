@@ -11,8 +11,8 @@ export default function Navbar() {
 
       <div className="nav-menu">
         <a href="#"><i className="fas fa-home"></i> Home</a>
-        <a href="#education"><i className="fas fa-graduation-cap"></i> Education</a>
         <a href="#about"><i className="fas fa-user"></i> About</a>
+        <a href="#education"><i className="fas fa-graduation-cap"></i> Education</a>
         <a href="#contact"><i className="fas fa-envelope"></i> Contact</a>
       </div>
     </nav>

@@ -114,6 +114,8 @@ const Experience = () => {
           ))}
         </VerticalTimeline>
       </div>
+            <hr className="section-divider" />
+
     </section>
   );
 };
