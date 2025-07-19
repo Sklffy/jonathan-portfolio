@@ -1,24 +1,143 @@
-.loader{
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #18181b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
 }
 
-.loader svg{
-    width: 100%;
+/* Terminal container with larger fixed size */
+.terminal-container {
+  width: 900px;  /* Increased width */
+  height: 550px; /* Increased height */
+  background-color: #0c0c0c;
+  border-radius: 8px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: Consolas, monospace;
+  color: #00ffff;
+  position: relative;
 }
 
-.loading-text{
-    width: 100%;
-    font-weight: bold;
-    color: #fff;
-    transform: translate(.4rem);
-    margin-top: 1rem;
+.terminal-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1c1c1c;
+  padding: 6px 10px;
+  color: #000000;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.window-controls span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.terminal-box,
+.terminal-screen {
+  position: relative;
+  flex-grow: 1;
+  padding: 20px;
+  font-size: 1rem;
+  color: #00ffff;
+  white-space: pre-wrap;
+  overflow-y: auto;
+}
+
+/* Screen background */
+.screen {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+/* Terminal Emulator */
+.terminal_emulator {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding: 40px 20px;
+  font-size: 22px;  /* Slightly larger font for bigger terminal */
+  line-height: 28px;
+  box-sizing: border-box;
+  text-align: left;
+  font-family: monospace;
+  font-weight: 700;
+  color: #99ff99;
+}
+
+.terminal_emulator__field,
+.terminal_emulator__command {
+  position: relative;
+  padding: 0 1em;
+  margin: 0 0 9px 0;
+}
+
+.terminal_emulator__field:before,
+.terminal_emulator__command:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: ">";
+}
+
+.terminal_emulator__response,
+.terminal_emulator__command b {
+  padding-bottom: 9px;
+}
+
+.terminal_emulator__field {
+  display: inline-block;
+  min-width: 1em;
+  min-height: 1.5em;
+  box-sizing: border-box;
+}
+
+.terminal_emulator__field:after {
+  right: 0;
+  bottom: 0.25em;
+  content: "";
+  width: 1em;
+  height: 1.5em;
+  background: #99ff99;
+  animation: caretBlink 1s infinite;
+}
+
+.terminal_emulator__field.waiting {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.terminal_emulator__field.waiting:before {
+  display: none;
+}
+
+@keyframes caretBlink {
+  0%, 50% {
+    opacity: 0;
+  }
+  51%, 100% {
+    opacity: 1;
+  }
+}
+
+/* Logo inside terminal */
+.terminal-logo {
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 150px;  /* Increased size */
+  height: auto;
+  padding-bottom: 10px;
 }

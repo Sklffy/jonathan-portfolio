@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Education from './components/Education';
@@ -6,12 +7,23 @@ import Tabs from './components/Tabs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ParticlesBackground from './components/ParticlesBackground';
-
-
-
+import Loader from './components/Loader.jsx';
+import './components/Loader.css';
+import FooterBottom from './components/FooterBottom';
 
 function App() {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 7000); // Show loader for 7 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className="app-wrapper">
       <ParticlesBackground />
       <div className="main-content">
@@ -20,12 +32,14 @@ function App() {
         <Tabs />
         <Education />
         <Experience />
+      <div className="contact-footer-wrapper">
         <Contact />
-        <Footer />
+  <Footer />
+</div>
+<FooterBottom />
       </div>
     </div>
   );
 }
-
 
 export default App;

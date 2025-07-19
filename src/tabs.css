@@ -121,8 +121,7 @@
   padding: 2rem 1rem;
   text-align: left;
 }
-
-/* About Image */
+/* About Image Container */
 .about-image {
   flex: 1;
   display: flex;
@@ -131,18 +130,20 @@
 }
 
 .about-image .profile-glow {
+  width: 260px; /* Fixed size */
+  height: 260px;
   background: radial-gradient(circle, rgba(0, 180, 255, 0.25), transparent 70%);
   border-radius: 50%;
-  padding: 0.5rem;
   box-shadow: 0 0 40px rgba(0, 180, 255, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .about-image img {
-  width: 260px;
-  height: 260px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid rgba(255, 255, 255, 0.1);
@@ -150,8 +151,9 @@
 }
 
 .about-image img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1); 
 }
+
 
 /* About Info Box */
 .about-info {
