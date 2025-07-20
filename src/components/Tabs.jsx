@@ -1,46 +1,64 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import '../Tabs.css';
 import About from './About';
 import Projects from './Projects';
 import TechStack from './TechStack';
 
-export default function Tabs() {
-  useEffect(() => {
-    const btns = document.querySelectorAll('.tab-btn');
-    const tabs = document.querySelectorAll('.tab-content');
+export default function Tabs({ activeTab, setActiveTab }) {
+  const [localActiveTab, setLocalActiveTab] = useState(activeTab || "about");
 
-    const handler = (e) => {
-      btns.forEach((b) => b.classList.remove('active'));
-      e.currentTarget.classList.add('active');
-      const target = e.currentTarget.getAttribute('data-tab');
-      tabs.forEach((t) => t.classList.toggle('active', t.id === target));
-    };
+  // Sync with parent activeTab
+  React.useEffect(() => {
+    if (activeTab) setLocalActiveTab(activeTab);
+  }, [activeTab]);
 
-    btns.forEach((b) => b.addEventListener('click', handler));
-    return () => btns.forEach((b) => b.removeEventListener('click', handler));
-  }, []);
+  const handleTabClick = (tab) => {
+    setLocalActiveTab(tab);
+    if (setActiveTab) setActiveTab(tab);
+  };
 
   return (
     <>
+  <hr className="section-divider" />
       <section className="section-tabs">
         <div className="tab-buttons">
-          <button className="tab-btn active" data-tab="about">About Me</button>
-          <button className="tab-btn" data-tab="projects">Projects</button>
-          <button className="tab-btn" data-tab="tech">Tech Stack</button>
+          <button
+            className={`tab-btn ${localActiveTab === "about" ? "active" : ""}`}
+            onClick={() => handleTabClick("about")}
+          >
+            About Me
+          </button>
+          <button
+            className={`tab-btn ${localActiveTab === "projects" ? "active" : ""}`}
+            onClick={() => handleTabClick("projects")}
+          >
+            Projects
+          </button>
+          <button
+            className={`tab-btn ${localActiveTab === "techstack" ? "active" : ""}`}
+            onClick={() => handleTabClick("techstack")}
+          >
+            Tech Stack
+          </button>
         </div>
 
-        <div className="tab-content active" id="about">
-          <About />
-        </div>
-        <div className="tab-content" id="projects">
-          <Projects />
-        </div>
-        <div className="tab-content" id="tech">
-          <TechStack />
-        </div>
+        {localActiveTab === "about" && (
+          <div className="tab-content active" id="about">
+            <About />
+          </div>
+        )}
+        {localActiveTab === "projects" && (
+          <div className="tab-content active" id="projects">
+            <Projects />
+          </div>
+        )}
+        {localActiveTab === "techstack" && (
+          <div className="tab-content active" id="techstack">
+            <TechStack />
+          </div>
+        )}
       </section>
 
-      {/* Divider Below Tabs */}
       <hr className="section-divider" />
     </>
   );

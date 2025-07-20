@@ -16,7 +16,7 @@ const techIcons = [
 
 export default function TechStack() {
   return (
-    <div className="tech-stack-section">
+    <div className="tech-stack-section" id="techstack">
       {/* Reused Projects Header Style */}
       <div className="projects-header">
         <span className="projects-subtitle">MY TOOLKIT</span>

@@ -1,5 +1,6 @@
-// -------------------- Hero.jsx --------------------
 import React, { useEffect } from 'react';
+import './hero.css';
+import { FaDownload, FaEnvelope } from 'react-icons/fa';
 
 export default function Hero() {
   useEffect(() => {
@@ -42,32 +43,37 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div className="container hero-content">
+      <div className="hero-content">
         <div className="text">
-          <p className="intro">I'm</p>
-          <h1><span className="gradient-name">Jonathan Geisler</span></h1>
-          <h2><span id="typewriter"></span></h2>
-          <a
-            href="/JonathanGeislerCV.pdf"
-            className="resume-btn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fas fa-file-alt"></i> View Resume
-          </a>
-          <div className="social-icons">
+          <div className="greeting">
+            <span className="wave">👋</span> Hey there!
+          </div>
+          <h1>I'm <span className="gradient-name">Jonathan Geisler</span></h1>
+          <h2 className="typewriter-text"><span id="typewriter"></span></h2>
+          <p className="hero-description">
+            I love learning new technologies and building solutions that make a difference.
+            Thanks for visiting my portfolio!
+          </p>
+          <div className="hero-buttons">
             <a
-              href="https://linkedin.com/in/jdgeisler"
+              href="/JonathanGeislerCV.pdf"
+              className="resume-btn"
               target="_blank"
               rel="noreferrer"
             >
+              <FaDownload style={{ marginRight: '8px' }} />
+              My Resume
+            </a>
+            <a href="#contact" className="contact-btn">
+              <FaEnvelope style={{ marginRight: '8px' }} />
+              Contact Me
+            </a>
+          </div>
+          <div className="social-icons">
+            <a href="https://linkedin.com/in/jdgeisler" target="_blank" rel="noreferrer">
               <i className="fab fa-linkedin"></i>
             </a>
-            <a
-              href="https://github.com/Sklffy"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://github.com/Sklffy" target="_blank" rel="noreferrer">
               <i className="fab fa-github"></i>
             </a>
             <a href="mailto:jdgeisler@gmail.com">
@@ -75,9 +81,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
         <div className="profile-wrapper">
-          <div className="border-spin" />
           <img
             src="/Jonny.png"
             alt="Jonathan Geisler"
@@ -85,7 +89,6 @@ export default function Hero() {
           />
         </div>
       </div>
-      <hr className="section-divider" />
     </section>
   );
 }

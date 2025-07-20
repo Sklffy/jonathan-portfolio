@@ -18,77 +18,62 @@
 }
 
 /* Tab Buttons */
-/* Container for Tab Buttons */
+/* Tab Buttons Container */
 .tab-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2.5rem;
+  margin-top: -2rem; /* Moves it higher */
   padding: 1rem 1.5rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.04);
+  border-radius: 9999px;
+  background: rgba(10, 25, 47, 0.75);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
+
 
 /* Tab Button Base */
 .tab-btn {
-  position: relative;
-  padding: 0.75rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.8rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: #cbd5e1;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  color: #64ffda;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  overflow: hidden;
-  z-index: 1;
-  box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.2),
-    0 0 8px rgba(100, 255, 218, 0.1),
-    inset 0 0 2px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.04);
 }
 
-/* Animated Gradient Overlay */
-.tab-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(270deg, #64ffda, #06b6d4, #3b82f6, #64ffda);
-  background-size: 400% 400%;
-  animation: gradientMove 6s linear infinite;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: -1;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Tab Button Icon */
+.tab-btn i {
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
 /* Hover Effect */
-.tab-btn:hover::before {
-  opacity: 1;
-}
-
 .tab-btn:hover {
-  transform: translateY(-2px);
   color: #fff;
+  background: rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Active Tab */
 .tab-btn.active {
-  color: #ffffff;
-  border: 1px solid rgba(100, 255, 218, 0.6);
+  background: linear-gradient(90deg, #a855f7, #6366f1, #3b82f6);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5),
+              0 0 25px rgba(168, 85, 247, 0.4);
+  transform: scale(1.02);
 }
+
 
 .tab-btn.active::before {
   opacity: 1;
@@ -225,31 +210,35 @@
 }
 
 /* Projects Header */
+/* -------------------- Projects.css -------------------- */
+
+/* Projects Header */
 .projects-header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   position: relative;
 }
 
 .projects-subtitle {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   padding: 0.4rem 1rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #a5b4fc;
+  background: rgba(59, 130, 246, 0.1);
+  color: #93c5fd;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 0.8rem;
+  text-transform: uppercase;
 }
 
 .projects-title {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #38bdf8, #a855f7, #ec4899);
+  background: linear-gradient(90deg, #38bdf8, #6366f1, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 8px rgba(100, 255, 218, 0.4);
+  text-shadow: 0 0 12px rgba(100, 255, 218, 0.35);
 }
 
 .projects-title span {
@@ -257,79 +246,54 @@
 }
 
 .projects-description {
-  color: #cbd5e1;
+  color: #d1d5db;
   max-width: 700px;
   margin: 1rem auto 0;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
 .projects-underline {
-  width: 70px;
+  width: 80px;
   height: 4px;
-  background: #5eead4;
+  background: linear-gradient(90deg, #5eead4, #3b82f6);
   border-radius: 4px;
-  margin: 1rem auto 0;
-  box-shadow: 0 0 8px #5eead4;
+  margin: 1.3rem auto 0;
+  box-shadow: 0 0 10px #5eead4;
 }
-
 
 /* Project Grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   padding: 2rem 0;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Modern Glassy Project Card */
+/* Project Card */
 .project-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4),
     0 0 25px rgba(100, 255, 218, 0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Glowing gradient border animation */
-.project-card::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 22px;
-  background: linear-gradient(120deg, #64ffda, #3b82f6, #06b6d4, #64ffda);
-  background-size: 300% 300%;
-  animation: cardGlow 6s ease infinite;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.project-card:hover::before {
-  opacity: 1;
-}
-
-@keyframes cardGlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 .project-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55),
-    0 0 40px rgba(100, 255, 218, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(100, 255, 218, 0.4);
 }
-
 
 /* Project Image */
 .project-img {
@@ -347,9 +311,9 @@
 }
 
 .project-info h3 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #5eead4;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   font-weight: 700;
   text-shadow: 0 0 8px rgba(94, 234, 212, 0.5);
 }
@@ -361,173 +325,72 @@
   line-height: 1.4;
 }
 
-/* Tech Header */
-.tech-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.tech-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #8ec5fc, #e0c3fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-.tech-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  margin: 0.4rem auto 0;
-  background: linear-gradient(90deg, #8ec5fc, #e0c3fc);
-  border-radius: 2px;
-}
-
-.tech-subtext {
-  color: #cbd5e1;
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  font-weight: 400;
-}
-
-/* Tags */
+/* Tech Badges */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-bottom: 1.2rem;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.tags span {
-  background: rgba(255, 255, 255, 0.07);
-  color: #e2e8f0;
-  font-size: 0.75rem;
-  padding: 0.3rem 0.75rem;
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background 0.2s ease;
+  color: #e2e8f0;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.tags span:hover {
+.tech-badge:hover {
   background: rgba(100, 255, 218, 0.2);
+  transform: scale(1.05);
 }
 
+.tech-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
 
-/* Source Code Button */
+/* Source Code Button (GitHub style) */
 .project-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 1.5rem;
 }
 
-.project-actions .details-btn {
-  display: flex;
+.details-btn {
+  display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 1rem;
-  padding: 0.7rem 2rem;
-  border-radius: 40px;
-  text-decoration: none;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #e8e6ef;
-  background: rgba(20, 20, 40, 0.6);
+  color: #ffffff;
+  background: #171515; /* GitHub dark */
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 0 20px rgba(243, 242, 247, 0.3),
-    inset 0 0 5px rgba(255, 255, 255, 0.05);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.35s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Gradient Shine Effect */
-.project-actions .details-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(167, 139, 250, 0.2),
-    transparent
-  );
-  transform: skewX(-25deg);
-  transition: 0.5s;
+.details-btn:hover {
+  background: #24292f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
-.project-actions .details-btn:hover::before {
-  left: 130%;
+.github-icon {
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
-.project-actions .details-btn:hover {
-  background: rgba(167, 139, 250, 0.2);
-  color: #fff;
-  box-shadow: 0 0 30px rgba(229, 228, 234, 0.6),
-    inset 0 0 10px rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px) scale(1.03);
-}
-
-/* Hide all tabs by default */
-.tab-content {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  position: relative;
-  z-index: 0;
-}
-
-/* Active tab content */
-.tab-content.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  z-index: 1;
-}
-
-.tab-content.active {
-  animation: fadeScale 0.4s ease forwards;
-}
-
-@keyframes fadeScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.98) translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  align-items: center;
-  margin: 2rem auto;
-  max-width: 1000px;
-}
-
-.tech-item {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
  /* Technologies Section */
 .tech-section {
   margin-top: 1rem;
@@ -566,4 +429,21 @@
 .tags span:hover {
   background: rgba(100, 255, 218, 0.2);
   transform: scale(1.05);
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.tech-item {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,0 +1,121 @@
+/* BUBBLE NAVBAR CONTAINER */
+.bubble-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+}
+
+/* LOGO AREA */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-img {
+  height: 46px;
+  width: 46px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  padding: 0.3rem;
+  box-shadow: 0 0 8px rgba(100, 255, 218, 0.5);
+}
+
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #a78bfa;
+}
+
+.sub-text {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #cbd5e1;
+}
+
+/* BUBBLE LINKS CONTAINER */
+.nav-bubble {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(10, 25, 47, 0.7);
+  border-radius: 9999px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+}
+
+/* NAV LINKS */
+.nav-bubble a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.nav-bubble a i {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.nav-bubble a:hover {
+  color: #fff;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.6), rgba(147, 51, 234, 0.6));
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Active link highlight with gradient animation */
+.nav-bubble .active {
+  background: linear-gradient(90deg, #4f46e5, #9333ea, #6366f1);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.5);
+  transform: scale(1.05);
+}
+
+/* Smooth gradient animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+/* Editz Button */
+.edit-btn {
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  color: white !important;
+  font-weight: 600;
+}
+
+.edit-btn:hover {
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+}

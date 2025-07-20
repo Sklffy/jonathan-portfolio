@@ -13,11 +13,12 @@ import FooterBottom from './components/FooterBottom';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("about"); // <-- Add this state
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 7000); // Show loader for 7 seconds
+    }, 7000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -27,16 +28,18 @@ function App() {
     <div className="app-wrapper">
       <ParticlesBackground />
       <div className="main-content">
-        <Navbar />
+        {/* Pass setActiveTab here */}
+        <Navbar setActiveTab={setActiveTab} />
         <Hero />
-        <Tabs />
+        {/* Pass activeTab + setActiveTab to Tabs */}
+        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <Education />
         <Experience />
-      <div className="contact-footer-wrapper">
-        <Contact />
-  <Footer />
-</div>
-<FooterBottom />
+        <div className="contact-footer-wrapper">
+          <Contact />
+          <Footer />
+        </div>
+        <FooterBottom />
       </div>
     </div>
   );

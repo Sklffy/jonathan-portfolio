@@ -1,0 +1,277 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+/* HERO SECTION */
+.hero {
+  background: transparent;
+  flex-direction: column;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  gap: 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #e5f2ff;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* TEXT SIDE */
+.text {
+  flex: 1;
+  min-width: 320px;
+}
+
+.text .intro {
+  font-size: 1.5rem;
+  color: #1ea5ff;
+  font-weight: 700;
+}
+
+.text h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.text h2 {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  color: #b779ff;
+}
+
+/* Typewriter Effect */
+#typewriter::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Shared Button Styles */
+.resume-btn, .contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* My Resume Button */
+.resume-btn {
+  background-color: #2a2b37;
+  color: #fff;
+}
+
+.resume-btn:hover {
+  background-color: #3c3e4f;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Contact Me Button */
+.contact-btn {
+  background-color: #6366f1;
+  color: #fff;
+}
+
+.contact-btn:hover {
+  background-color: #4f46e5;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+  transform: translateY(-2px);
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-icons a {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.7rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icons i {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+}
+
+.social-icons a:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+}
+
+/* PROFILE + BORDER */
+/* PROFILE + BORDER */
+.profile-wrapper {
+  position: relative;
+  width: 345px;
+  height: 345px;
+  border-radius: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner white ring */
+.profile-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -29px;
+  left: -29px;
+  width: calc(100% + 55px);
+  height: calc(100% + 55px);
+  border-radius: 50%;
+  z-index: 1;
+  border: 4px solid #ffffff;
+}
+
+/* Outer gradient ring */
+.profile-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -28px;
+  left: -28px;
+  width: calc(100% + 62px);
+  height: calc(100% + 62px);
+  border-radius: 100%;
+  background: conic-gradient(
+    #a855f7 0%,   
+    #6366f1 25%,  
+    #38bdf8 50%,  
+    #6366f1 75%, 
+    #a855f7 100%
+  );
+  animation: spin 5s linear infinite;
+  transform-origin: center;
+  z-index: 0;
+}
+
+/* Profile image */
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  z-index: 2;
+}
+
+
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animated Gradient Text */
+.gradient-name {
+  background: linear-gradient(
+    to right,
+    #a855f7 0%,  
+    #6366f1 25%,  
+    #38bdf8 50%,  
+    #6366f1 75%,  
+    #a855f7 100%  
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Divider */
+.section-divider {
+  width: 100%;
+  height: 3px;
+  border: none;
+  margin: 4rem 0;
+  opacity: 0.7;
+  background: linear-gradient(90deg, #8ec5fc, #a855f7, #38bdf8, #8ec5fc);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+  border-radius: 4px;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 200% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.greeting {
+  display: inline-block;
+  background: transparent;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.wave {
+  display: inline-block;
+  animation: waveAnimation 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes waveAnimation {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  40% { transform: rotate(14deg); }
+  50% { transform: rotate(-4deg); }
+  60% { transform: rotate(10deg); }
+  70% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
