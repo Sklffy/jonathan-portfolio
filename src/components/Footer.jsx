@@ -10,13 +10,10 @@ export default function Footer() {
         <div className="footer-block">
           <h3 className="footer-title">Jonathan's Portfolio</h3>
           <p className="footer-text">
-            Thanks for stopping by my personal portfolio. Feel free to connect with me on my social channels.
+            Thanks for stopping by my personal portfolio. Feel free to connect with me.
           </p>
           <p className="footer-text rocket-text">
             Keep Rising <span className="rocket">🚀</span>
-          </p>
-          <p className="footer-text">
-            🎯 Passionate about learning new technologies, solving problems, and creating impactful solutions.
           </p>
         </div>
 
@@ -42,19 +39,39 @@ export default function Footer() {
         {/* Contact Info Section */}
         <div className="footer-block">
           <h3 className="footer-title">Contact Info</h3>
-          <p className="footer-text">
-            <FaEnvelope className="contact-icon" /> jdgeisler@gmail.com
-          </p>
-          <p className="footer-text">📍 United States</p>
-          <div className="footer-socials">
-            <a href="https://linkedin.com/in/jdgeisler" target="_blank" rel="noreferrer">
-              <FaLinkedin />
+
+          {/* Location (Now FIRST) */}
+          <div className="footer-info">
+            <span className="footer-icon">📍</span>
+            <span>United States</span>
+          </div>
+
+          {/* Email (Now AFTER Location) */}
+          <a href="mailto:jdgeisler@gmail.com" className="footer-btn">
+            <FaEnvelope className="footer-icon" />
+            jdgeisler@gmail.com
+          </a>
+
+          {/* Social Circular Buttons */}
+          <div className="footer-social-buttons">
+            <a
+              href="https://linkedin.com/in/jdgeisler"
+              target="_blank"
+              rel="noreferrer"
+              className="social-button"
+            >
+              <FaLinkedin className="social-icon" />
             </a>
-            <a href="https://github.com/Sklffy" target="_blank" rel="noreferrer">
-              <FaGithub />
+            <a
+              href="https://github.com/Sklffy"
+              target="_blank"
+              rel="noreferrer"
+              className="social-button"
+            >
+              <FaGithub className="social-icon" />
             </a>
-            <a href="mailto:jdgeisler@gmail.com">
-              <FaEnvelope />
+            <a href="mailto:jdgeisler@gmail.com" className="social-button">
+              <FaEnvelope className="social-icon" />
             </a>
           </div>
         </div>

@@ -13,7 +13,7 @@ import FooterBottom from './components/FooterBottom';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("about"); // <-- Add this state
+  const [activeTab, setActiveTab] = useState("about");
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -13,8 +13,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 90%;
   border: 1px solid rgba(147, 51, 234, 0.2);
+  transition: box-shadow 0.3s ease;
+  max-width: 60%; /* makes it wider */
+}
+
+.footer-container:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
 }
 
 .footer-grid {
@@ -34,6 +40,7 @@
   padding: 2rem;
 }
 
+/* Footer Card */
 .footer-card {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
@@ -41,11 +48,13 @@
   border: 1px solid rgba(147, 51, 234, 0.1);
   box-shadow: 0 0 15px rgba(99, 102, 241, 0.05);
   flex: 1;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .footer-card:hover {
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 18px rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
 }
 
 /* Footer Title */
@@ -69,6 +78,7 @@
   border-radius: 2px;
 }
 
+/* Footer Text */
 .footer-text {
   font-size: 0.95rem;
   line-height: 1.6;
@@ -85,10 +95,15 @@
 
 /* Quick Links */
 .footer-links li {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   position: relative;
+  transition: transform 0.2s ease;
+}
+
+.footer-links li:hover {
+  transform: translateX(5px);
 }
 
 .footer-links a {
@@ -149,9 +164,11 @@
 .footer-socials a:hover {
   background: linear-gradient(90deg, #6366f1, #9333ea);
   color: #ffffff;
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
 }
 
+/* Footer Bottom */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 1rem;
@@ -203,4 +220,117 @@
   background: rgba(30, 41, 59, 0.4);
   backdrop-filter: blur(6px);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rocket {
+  display: inline-block;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.rocket:hover {
+  transform: translateY(-10px) rotate(15deg) scale(1.2);
+  color: #38bdf8;
+}
+/* Circular Social Buttons */
+.footer-social-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.1);
+  color: #e2e8f0;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-button:hover {
+  background: linear-gradient(90deg, #6366f1, #9333ea);
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
+
+.social-icon {
+  font-size: 1.4rem;
+  color: #38bdf8;
+  transition: color 0.3s ease;
+}
+
+.social-button:hover .social-icon {
+  color: #fff;
+}
+
+
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0.25rem 0.6rem; /* Matches height closer to the location text */
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.1);
+  color: #e2e8f0 !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1; /* prevents extra vertical spacing */
+  text-decoration: none !important;
+  height: auto; /* allows it to shrink to content height */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-btn .footer-icon {
+  font-size: 1rem; /* smaller icon to match height */
+  color: #38bdf8;
+  transition: color 0.3s ease;
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between icon and text */
+  margin-bottom: 0.6rem; /* adds space below location */
+}
+
+.footer-btn:hover {
+  background: linear-gradient(90deg, #6366f1, #9333ea);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+.footer-btn .footer-icon {
+  font-size: 1rem; /* smaller icon */
+  color: #38bdf8;
+  transition: color 0.3s ease;
+}
+
+.footer-btn:hover {
+  background: linear-gradient(90deg, #6366f1, #9333ea);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+.footer-btn:hover .footer-icon {
+  color: #ffffff;
 }
