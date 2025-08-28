@@ -83,7 +83,7 @@ export default function Hero() {
         </div>
         <div className="profile-wrapper">
           <img
-            src="/Jonny.png"
+            src="/Jonny2.png"
             alt="Jonathan Geisler"
             className="profile-pic"
           />
